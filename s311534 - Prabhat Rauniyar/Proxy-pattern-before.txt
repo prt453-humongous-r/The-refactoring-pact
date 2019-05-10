@@ -1,0 +1,15 @@
+public class Laptop {
+    private String model;
+    
+    public Laptop()      {
+    
+    }
+    
+    @Override
+    public void setModel(String model){
+            this.model = model;
+    
+    }
+
+    
+}

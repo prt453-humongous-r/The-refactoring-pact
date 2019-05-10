@@ -1,0 +1,55 @@
+public class Laptop implements LaptopInterface{
+    private String model;
+    
+    public Laptop()      {
+    
+    }
+    
+    @Override
+    public void setModel(String model){
+            this.model = model;
+    
+    }
+
+    
+}
+
+
+public class Prt453 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        LaptopInterface i = new Proxy();
+        
+        i.setModel("Toshiba");
+        
+        
+    }
+    
+}
+
+public class Proxy implements LaptopInterface
+{
+    private Laptop laptop;
+    private String Model;
+    
+    @Override
+    public void setModel(String model)
+    {
+        
+            if(laptop == null){
+                laptop = new Laptop();
+            }
+            laptop.setModel(model);
+     }
+}
+
+public interface LaptopInterface {
+
+
+    void setModel(String model);
+}

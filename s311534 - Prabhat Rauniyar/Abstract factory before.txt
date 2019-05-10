@@ -1,0 +1,53 @@
+public class RoundedShapeFactory {
+   @Override
+   public Shape getShape(String shapeType){    
+      if(shapeType.equalsIgnoreCase("RECTANGLE")){
+         return new RoundedRectangle();         
+      }else if(shapeType.equalsIgnoreCase("SQUARE")){
+         return new RoundedSquare();
+      }	 
+      return null;
+   }
+
+    private static class RoundedSquare implements Shape {
+
+        public RoundedSquare() {
+        }
+
+        @Override
+        public void draw() {
+             
+        }
+    }
+}
+public class RoundedRectangle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside RoundedRectangle::draw() method.");
+   }
+}
+public interface Shape {
+   public void draw();
+}
+public class ShapeFactory extends AbstractFactory{
+  
+   @Override
+   public Shape getShape(String shapeType){    
+      if(shapeType.equalsIgnoreCase("RECTANGLE")){
+         return new Rectangle();         
+      }else if(shapeType.equalsIgnoreCase("SQUARE")){
+         return (Shape) new Square();
+      }	 
+      return null;
+   }
+}
+
+
+
+
+public class RoundedRectangle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside RoundedRectangle::draw() method.");
+   }
+}
